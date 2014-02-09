@@ -1,0 +1,18 @@
+{
+	"name": "wd Scripts",
+	"version": "0.1.0",
+	"homepage": "http://wdscripts.wiredot.com",
+	"authors": [
+		"Piotr Soluch <psoluch@wiredot.com>"
+	],
+	"description": "Liteweight jQuery Plugins",
+	"main": "jquery.wd-all.js",
+	"keywords": [
+		"jquery",
+		"plugin",
+		"alerts",
+		"notifications",
+		"jquery-plugin"
+	],
+	"license": "MIT"
+}
