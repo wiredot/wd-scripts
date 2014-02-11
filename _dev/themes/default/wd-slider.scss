@@ -1,0 +1,47 @@
+.wdSlider {
+	overflow: hidden;
+	position: relative;
+
+	> ul {
+		width: 100%;
+		height: 100%;
+
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		
+		> li {
+			height: 100%;
+			float: left;
+			position: relative;
+
+			> img {
+				width: 100%;
+				display: block;
+			}
+
+			div {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				background: rgba(black, 0.6);
+				color: white;
+				padding: 20px;
+			}
+		}
+	}
+
+	.next, .previous {
+		position: absolute;
+		top: 0;
+	}
+
+	.previous {
+		left: 0;
+	}
+
+	.next {
+		right: 0;
+	}
+
+}

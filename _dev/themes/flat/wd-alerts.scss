@@ -1,0 +1,142 @@
+/*** variables ***/
+
+$red-text: #b94a48;
+$red-bg: #f2dede;
+$red-border: #ebccd1;
+
+$green-text: #468847;
+$green-bg: #dff0d8;
+$green-border: #d6e9c6;
+
+$yellow-text: #c09853;
+$yellow-bg: #fcf8e3;
+$yellow-border: #faebcc;
+
+$blue-text: #3a87ad;
+$blue-bg: #d9edf7;
+$blue-border: #bce8f1;
+
+.wdAlert {
+	padding: 10px 10px 5px 10px;
+	margin-bottom: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	position: fixed;
+	width: 100%;
+	top: 20px;
+	z-index: 99999;
+
+	&:after {
+		content:'';
+		width: 0; 
+		height: 0; 
+		border-top: 8px solid $red-bg;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		position: absolute;
+		bottom: -8px;
+		left: 50%;
+		margin-left: -8px;
+	}
+
+	a {
+		text-decoration: none;
+		font-weight: bold;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&.info {
+		color: $blue-text;
+		background-color: $blue-bg;
+		border-color: $blue-border;
+
+		&:after {
+			border-top-color: $blue-bg;
+		}
+
+		a {
+			color: darken($blue-text, 10%);
+		}
+	}
+
+	&.success {
+		color: $green-text;
+		background-color: $green-bg;
+		border-color: $green-border;
+		
+		&:after {
+			border-top-color: $green-bg;
+		}
+
+		a {
+			color: darken($green-text, 10%);
+		}
+	}
+
+	&.warning {
+		color: $yellow-text;
+		background-color: $yellow-bg;
+		border-color: $yellow-border;
+
+		&:after {
+			border-top-color: $yellow-bg;
+		}
+
+		a {
+			color: darken($yellow-text, 10%);
+		}
+	}
+
+	&.error {
+		color: $red-text;
+		background-color: $red-bg;
+		border-color: $red-border;
+
+		a {
+			color: darken($red-text, 10%);
+		}
+	}
+
+	.close {
+		position: absolute;
+		right: 15px;
+		top: 12px;
+		width: 10px;
+		height: 10px;
+		line-height: 10px;
+		font-weight: bold;
+		font-size: 18px;
+		color: #000000;
+		opacity: 0.4;
+		filter: alpha(opacity=20);
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover, &:focus {
+			opacity: 0.6;
+			filter: alpha(opacity=40);
+			text-decoration: none !important;
+		}
+	}
+
+	.title {
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+
+	p {
+		margin: 0 0 5px 0;
+	}
+
+	ul {
+		margin: 0 0 5px 0;
+		padding: 0;
+	}
+
+	li {
+		margin: 0 0 0 19px;
+		padding: 0;
+	}
+}
