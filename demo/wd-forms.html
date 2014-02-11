@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Forms » wd Scripts » DEMO</title>
+		<meta charset="utf-8">
+		<link href="../themes/default/wd-forms.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="../themes/default/wd-alerts.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="css/wd-forms.css" media="all" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<pre>{	
+	"hide": true,
+	"message": "&lt;p&gt;Thanks for sharing&lt;/p&gt;"
+}</pre>
+			<form action="results.php" method="POST" class="wdForm">
+				<input type="text" name="name" id="name">
+				<button><span>send</span><div class="loader"></div></button>
+			</form>
+			<br>
+			<br>
+			<br>
+			<pre>{	
+	"redirect": {
+		"url": "http://google.com",
+		"delay": 2000
+	},
+	"reset": true
+}</pre>
+			<form action="results2.php" method="POST" class="wdForm">
+				<input type="text" name="name">
+				<button><span>send</span><div class="loader"></div></button>
+			</form>
+			<br>
+			<br>
+			<br>
+			<pre>{	
+	"error": true
+}</pre>
+			<form action="results3.php" method="POST" class="wdForm">
+				<input type="text" name="name">
+				<button><span>send</span><div class="loader"></div></button>
+			</form>
+			<br>
+			<br>
+			<br>
+			<pre>{	
+	"alert": {
+		"title": "Hi there!",
+		"type": "error",
+		"message": "There was an error",
+		"list": {
+			"1": "Fill this field",
+			"2": "Also this field",
+			"3": "And this field"
+		}
+	}
+}</pre>
+			<form action="results4.php" method="POST" class="wdForm">
+				<input type="text" name="name">
+				<button><span>send</span><div class="loader"></div></button>
+			</form>
+		</div>
+
+		<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+		<script src="../js/jquery.wd-alerts.js" type="text/javascript"></script>
+		<script src="js/spin.min.js" type="text/javascript"></script>
+		<script src="../js/jquery.wd-forms.js" type="text/javascript"></script>
+		<script src="js/wd-forms.js" type="text/javascript"></script>
+	</body>
+</html>

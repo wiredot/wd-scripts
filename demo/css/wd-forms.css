@@ -1,0 +1,26 @@
+body, html {
+  background: #ccc;
+  height: 100%;
+  margin: 0; }
+
+#wrapper {
+  width: 1024px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+#preview {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-left: 5px;
+  background: white; }
+
+p {
+  margin: 0; }
+
+.error {
+  background: rgba(255, 0, 0, 0.1); }
