@@ -21,6 +21,8 @@
 			showNavigation: true,
 			showLegend: true,
 
+			navigationHistory: true,
+
 			autoplay: 0,
 
 			loop: false,
@@ -55,7 +57,7 @@
 		init: function () {
 			var _ = this;
 
-			console.log(_);
+			//console.log(_);
 
 			// get number of slides
 			_.sliderCount = $(_.slider).children().children().length;
@@ -67,17 +69,22 @@
 			_.sliderTotalWidth = _.sliderCount * _.sliderWidth;
 
 			// set the total width of slider
-			$(_.slides).width(_.sliderTotalWidth);
+			//$(_.slides).width(_.sliderTotalWidth);
 
 			// set the width of each slide
-			$(_.slide).width(_.sliderWidth);
+			//$(_.slide).width(_.sliderWidth);
 
 			$(_.slide).first().addClass('active');
 
+
 			$(_.slide).each(function( index ){
 				if (!$(this).attr('id')) {
-					//$(this).attr('id', (index+1));
+					 var slideNr = index+1;
+				} else {
+					var slideNr = $(this).attr('id');
 				}
+
+				$(this).attr('id', 'slide_'+slideNr);
 			});
 
 			$(document).on('keyup', function(k) {
@@ -94,6 +101,23 @@
 
 			_.showNavigation(_);
 			_.showLegend(_);
+
+			jQuery(window).on('hashchange', function(e){
+				e.preventDefault();
+				_.hashChange(_);
+				return false;
+			});
+			
+			_.hashChange(_);
+		},
+
+		hashChange: function(_) {
+			var hash = location.hash;
+			var slideNr = hash.replace('#','');
+			if (!slideNr) {
+				slideNr = 1;
+			}
+			_.showSlide(_, (slideNr - 1));
 		},
 
 		showNextSlide: function(_) {
@@ -101,7 +125,11 @@
 			var activeSlide = _.returnActiveSlide(_);
 
 			if (activeSlide < (_.sliderCount - 1)) {
-				_.showSlide(_, (activeSlide + 1));
+				if (_.options.navigationHistory) {
+					window.location.hash = '#'+(activeSlide + 2);
+				} else {
+					_.showSlide(_, (activeSlide + 1));
+				}
 			}
 			else if (_.options.loop) {
 				_.showSlide(_, (0));
@@ -112,7 +140,11 @@
 			var activeSlide = _.returnActiveSlide(_);
 
 			if (activeSlide > 0) {
-				_.showSlide(_, (activeSlide - 1));
+				if (_.options.navigationHistory) {
+					window.location.hash = '#'+(activeSlide);
+				} else {
+					_.showSlide(_, (activeSlide - 1));
+				}
 			}
 			else if (_.options.loop) {
 				_.showSlide(_, (_.sliderCount - 1));
@@ -120,7 +152,7 @@
 		},
 
 		showSlide: function(_, slideIndex) {
-
+			console.log(slideIndex);
 			$(_.slides).animate({
 						'margin-left': 0 - (_.sliderWidth * slideIndex)
 				}, _.options.animationTime, function() {
@@ -164,7 +196,7 @@
 			var activeSlide = 0;
 			$(_.slide).each(function( index ){
 				if ($(this).hasClass('active')) {
-					console.log(index);
+					//console.log(index);
 					activeSlide = index;
 				}
 			});
