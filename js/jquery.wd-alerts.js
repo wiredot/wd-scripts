@@ -16,7 +16,7 @@
 			animationInSpeed: 500,
 			
 			animationOut: 'dissolve', // slideDown, none
-			animationOutSpeed: 300,
+			animationOutSpeed: 500,
 			hideAfter: 0,
 
 			container: 'body',
@@ -80,8 +80,14 @@
             }
             else if (_.options.animationIn == 'moveDown') {
 				var alertHeight = alert.outerHeight();
-				alert.css('top', 0 - alertHeight);
-				alert.show().animate({'top': 20}, _.options.animationInSpeed, 'swing');
+				alert.css({
+					'top': 0 - alertHeight / 2,
+					'opacity': 0
+				});
+				alert.show().animate({
+					'top': 20, 
+					'opacity': 1
+				}, _.options.animationInSpeed, 'swing');
             }
             else if (_.options.animationIn == 'dissolve') {
 				alert.css('opacity',0).show().animate({'opacity': 1}, _.options.animationInSpeed);

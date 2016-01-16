@@ -92,13 +92,16 @@
 						_.showAlert(response.alert, _);
                     }
 
+                    if (response.callback) {
+						_.doCallback(response.callback, _);
+                    }
+
                 },
                 error: function() {
 					_.hideLoader(_);
                 }
             });
 		},
-
 
 		showLoader: function(_) {
 			// disable all buttons
@@ -183,7 +186,10 @@
 			}
 		},
 
-
+		doCallback: function(callback, _) {
+			var fn = window[callback.function];
+			fn(callback);
+		},
 
 		// -------------- PUBLIC METHODS --------------
 		
