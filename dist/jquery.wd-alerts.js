@@ -1,6 +1,6 @@
 /*
- * wdAlert
- * Ver: 0.0.1
+ * wdAlerts
+ * Ver: 0.2.1
  * Simple jQuery Alerts
  * Autor: Piotr Soluch <psoluch@wiredot.com>
  * url: http://wiredot.com

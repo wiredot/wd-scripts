@@ -1,6 +1,6 @@
 /*
  * wdSlider
- * Ver: 0.0.1
+ * Ver: 0.2.1
  * Simple jQuery Slider
  * Autor: Piotr Soluch <psoluch@wiredot.com>
  * url: http://wiredot.com

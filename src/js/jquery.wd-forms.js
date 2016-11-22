@@ -1,6 +1,6 @@
 /*
- * wdForm
- * Ver: 0.1.2
+ * wdForms
+ * Ver: {version}
  * Simple jQuery Form Handler
  * Autor: Piotr Soluch <psoluch@wiredot.com>
  * url: http://wiredot.com

@@ -6,11 +6,13 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	plumber = require('gulp-plumber'),
 	notify = require('gulp-notify'),
+	replace = require('gulp-replace'),
 	minify = require('gulp-minify');
 
 gulp.task('js', function() {
 	return gulp.src('src/js/*.js')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+		.pipe(replace('{version}', '0.2.1'))
     	.pipe(minify({
 	        ext:{
 	            min:'.min.js'
