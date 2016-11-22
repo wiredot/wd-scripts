@@ -1,0 +1,4 @@
+.wdAccordionBox {
+  display: none; }
+  .wdAccordionBox.active {
+    display: block; }

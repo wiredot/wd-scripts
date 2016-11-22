@@ -15,7 +15,6 @@ gulp.task('js', function() {
 	        ext:{
 	            min:'.min.js'
 	        },
-	        noSource:true
 	    }))
 	    .pipe(gulp.dest('dist'))
 		.pipe(notify({
