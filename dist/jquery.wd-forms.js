@@ -187,8 +187,13 @@
 		},
 
 		doCallback: function(callback, _) {
-			var fn = window[callback.function];
-			fn(callback);
+			var callbacks = $.Callbacks();
+			callbacks.add( window[callback.function] );
+			if (callback.attr) {
+				callbacks.fire( callback.attr );
+			} else {
+				callbacks.fire();
+			}
 		},
 
 		// -------------- PUBLIC METHODS --------------
