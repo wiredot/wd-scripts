@@ -1,6 +1,6 @@
 /*
  * wdNav
- * Ver: 0.2.1
+ * Ver: 0.2.2
  * Simple responsive navigation
  * Autor: Piotr Soluch <psoluch@wiredot.com>
  * url: http://wiredot.com

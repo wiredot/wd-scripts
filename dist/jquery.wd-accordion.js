@@ -1,6 +1,6 @@
 /*
  * wdAccordion
- * Ver: 0.2.1
+ * Ver: 0.2.2
  * Simple jQuery Slider
  * Autor: Piotr Soluch <psoluch@wiredot.com>
  * url: http://wdscripts.wiredot.com

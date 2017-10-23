@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 gulp.task('js', function() {
 	return gulp.src('src/js/*.js')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-		.pipe(replace('{version}', '0.2.1'))
+		.pipe(replace('{version}', '0.2.2'))
     	.pipe(minify({
 	        ext:{
 	            min:'.min.js'
